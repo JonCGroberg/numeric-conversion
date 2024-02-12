@@ -4,8 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="15254988-44ce-4eb3-bece-bbfdde0f06f6" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="15254988-44ce-4eb3-bece-bbfdde0f06f6" name="Changes" comment="added decoding for both hex and dec">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/numeric_conversion.py" beforeDir="false" afterPath="$PROJECT_DIR$/numeric_conversion.py" afterDir="false" />
     </list>
@@ -55,12 +54,25 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1707768421393</updated>
-      <workItem from="1707768423294" duration="7445000" />
+      <workItem from="1707768423294" duration="9196000" />
     </task>
+    <task id="LOCAL-00001" summary="added decoding for both hex and dec">
+      <option name="closed" value="true" />
+      <created>1707776220261</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1707776220261</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="added decoding for both hex and dec" />
+    <option name="LAST_COMMIT_MESSAGE" value="added decoding for both hex and dec" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -74,6 +86,6 @@
     </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/Lab4_NumericConversion$numeric_conversion.coverage" NAME="numeric_conversion Coverage Results" MODIFIED="1707775779052" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Lab4_NumericConversion$numeric_conversion.coverage" NAME="numeric_conversion Coverage Results" MODIFIED="1707777827188" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
