@@ -1,3 +1,8 @@
+hex_digits = {'0': 0, '1': 1, '2': 2, '3': 3, '4': 4, '5': 5, '6': 6, '7': 7, '8': 8, '9': 9, 'A': 10, 'B': 11,
+              'C': 12, 'D': 13, 'E': 14, 'F': 15}
+hex_digits_inverse = {v: k for k, v in hex_digits.items()}  # inverts the hex_digits (used for encoding in option 3)
+
+
 def main():
     user_selection = prompt_menu()  # ask user to select an option => return the option
     user_number = prompt_number()  # ask user to enter a number => return number
@@ -35,9 +40,10 @@ def prompt_menu():
     if user_input == "4":
         print("Goodbye!")
         quit()
-    elif user_input != "1" and user_input != "2" and user_input != "3":
-        quit()
-    else:
+    elif user_input not in ["1", "2", "3"]:
+        print("Invalid option. Please try again.\n")
+        prompt_menu()  # re-prompt
+    else:  # valid options get returned
         return user_input
 
 
@@ -45,16 +51,14 @@ def prompt_number():
     return input("Please enter the numeric string to convert: ")
 
 
-def hex_char_decode(digit: str):
+def hex_char_decode(digit: str) -> int:
     """Decodes a single hexadecimal digit and returns its value."""
-    hex_digits = {'0': 0, '1': 1, '2': 2, '3': 3, '4': 4, '5': 5, '6': 6, '7': 7, '8': 8, '9': 9, 'A': 10, 'B': 11,
-                  'C': 12, 'D': 13, 'E': 14, 'F': 15}
     return hex_digits[digit.upper()]  # reads the dictionary and returns the corresponding value
 
 
-def hex_string_decode(hex: str):
+def hex_string_decode(hexadecimal: str) -> int:
     """Decodes an entire hexadecimal string and returns its value."""
-    hex_str = strip(hex)
+    hex_str = strip(hexadecimal)
     index = len(hex_str) - 1
     result = 0
 
@@ -66,9 +70,22 @@ def hex_string_decode(hex: str):
     return result
 
 
-def hex_string_encode(decimal):
+def hex_num_encode(decimal: int) -> int:
+    """Encodes a single decimal digit and returns its value."""
+    return hex_digits_inverse[decimal]
+
+
+def hex_string_encode(decimal: int) -> str:
     """Encodes an entire decimal string and returns its value."""
-    result = 0
+    result = ""
+    quotient = decimal
+
+    while quotient > 0:
+        remainder = quotient % 16  # calculate remainder
+        quotient = quotient // 16  # set the quotient to the new quotient, so we can carry it over
+
+        result = str(hex_num_encode(remainder)) + result
+
     return result
 
 
@@ -86,11 +103,12 @@ def binary_string_decode(binary: str):
 
 
 #
-def binary_to_hex(binary):
+def binary_to_hex(binary: str):
     """Decodes a binary string, re-encodes it as hexadecimal, and returns the hexadecimal string."""
     decimal = binary_string_decode(binary)
     hexadecimal = hex_string_encode(decimal)
-    return hex
+    return hexadecimal
+    # return hex_string_encode(int(binary))
 
 
 if __name__ == '__main__':
